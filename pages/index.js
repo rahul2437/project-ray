@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Box } from "@chakra-ui/react";
 import { Inter } from '@next/font/google'
+import Header from "../components/Header";
 
 import Navbar from "../components/Navbar";
 import Pricing from "../components/Pricing";
@@ -20,6 +21,7 @@ export default function Home() {
       </Head>
       <Box>
       <Navbar />
+      <Header />
       <Pricing />
       <Footer />
       </Box>

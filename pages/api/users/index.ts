@@ -17,12 +17,11 @@ const getUsers = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(400).send({ message: err.message });
   }
 };
-const addUser = async (req: NextApiRequest, res: NextApiResponse) => {
+const addCourse = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await connectDB();
     let { body } = req;
-    let user = new User(body);
-    await user.save();
+
     res.send({ message: `${body.role} User Created` });
   } catch (error: any) {
     res.send({ message: error.message });

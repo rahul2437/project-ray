@@ -83,7 +83,7 @@ const Team = ({ image, name, role, location, email, linkedIn }) => {
               color: "gray.200",
             }}
           >
-            {/* <FaSuitcase size={24} /> */}
+         
             <Text
               fontSize="2xl"
               fontWeight="bold"
@@ -102,7 +102,7 @@ const Team = ({ image, name, role, location, email, linkedIn }) => {
               color: "gray.200",
             }}
           >
-            {/* <FaMapPin size={20} /> */}
+          
             <Text fontSize="lg">{location}</Text>
           </HStack>
           <HStack
@@ -112,7 +112,7 @@ const Team = ({ image, name, role, location, email, linkedIn }) => {
               color: "gray.200",
             }}
           >
-            {/* <FaEnvelope size={20} /> */}
+      
             <Text fontSize="lg">{email}</Text>
           </HStack>
           <Box fontSize="2xl" mt="15px" color="#0a7caa">

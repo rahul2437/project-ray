@@ -2,9 +2,9 @@ import Head from 'next/head'
 import { Box } from "@chakra-ui/react";
 import { Inter } from '@next/font/google'
 import Header from "../components/Header";
-
+import Features from "../components/Home/Features"
 import Navbar from "../components/Navbar";
-import Pricing from "../components/Pricing";
+import Price from "../components/Pricing";
 
 import Footer from "../components/Footer";
 
@@ -22,7 +22,8 @@ export default function Home() {
       <Box>
       <Navbar />
       <Header />
-      <Pricing />
+      <Features />
+      <Price />
       <Footer />
       </Box>
     </>

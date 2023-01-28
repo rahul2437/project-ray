@@ -17,7 +17,7 @@ import {
 import { IoCheckmark } from "react-icons/io5";
 import PaymentCard from "./PaymentCard"
 
-const Pricing = () => {
+const Price = () => {
   const topBg = useColorModeValue("red.100", "gray.700");
   const bottomBg = useColorModeValue("white", "gray.800");
   const Feature = (props) => {
@@ -67,7 +67,7 @@ const Pricing = () => {
           bgClip="text"
           textAlign="center"
         >
-          Simple transparent pricing
+           Pricing Base on Duration.
         </Text>
         <chakra.p
           mb={6}
@@ -78,7 +78,7 @@ const Pricing = () => {
           }}
           textAlign="center"
         >
-          If you're not satisfied, contact us and we'll refund you within a Month.
+          If you're not satisfied, contact us and we will refund your money in 7 working Day. Till First month of starting you account.
         </chakra.p>
         <Box w="full" pt={8}>
           <Flex
@@ -346,6 +346,6 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default Price;
 
 

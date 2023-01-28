@@ -12,14 +12,20 @@ const CourseSchema = mongoose.Schema(
     slug: {
       type: String,
       required: true,
+      unique: true,
     },
-    type: {
-      type: String,
-      isFree: Boolean,
+    isFree: {
+      type: Boolean,
       required: true,
+      default: true,
     },
     thumbnail: {
       type: String,
+      required: true,
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     videos: [

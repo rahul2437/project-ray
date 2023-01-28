@@ -40,6 +40,16 @@ const UserSchema = mongoose.Schema(
         },
       ],
     },
+    listedCourses: {
+      type: [
+        {
+          courseId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Course",
+          },
+        },
+      ],
+    },
   },
   {
     timestamps: true,

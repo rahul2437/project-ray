@@ -1,0 +1,10 @@
+.admin_loginForm input,
+.admin_loginForm select {
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+.admin_loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

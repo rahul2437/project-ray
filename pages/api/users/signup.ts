@@ -9,7 +9,7 @@ const addUser = async (req: NextApiRequest, res: NextApiResponse) => {
     let { body } = req;
     let user = new User(body);
     await user.save();
-    res.send({ message: `${body.role} User Created` });
+    res.send({ message: `${body.role} User Created`, user });
   } catch (error: any) {
     res.send({ message: error.message });
   }

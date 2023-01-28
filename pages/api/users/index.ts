@@ -21,8 +21,7 @@ const addCourse = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await connectDB();
     let { body } = req;
-
-    res.send({ message: `${body.role} User Created` });
+    res.send({ message: `Course added` });
   } catch (error: any) {
     res.send({ message: error.message });
   }
@@ -34,7 +33,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     case "GET":
       return getUsers(req, res);
     case "POST":
-      return addUser(req, res);
+      return addCourse(req, res);
     default:
       return res.send({ message: "Invalid request" });
   }

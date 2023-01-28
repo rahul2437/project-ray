@@ -8,7 +8,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  InputLeftAddon,
+
   Select,
   Stack,
   Text,
@@ -18,18 +18,22 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Navbar from "../components/navbar";
+ import { useDispatch } from "react-redux";
+ import { signup } from "../Redux/AuthReducer/action";
 
+const initialState = {
+  name: "",
+  email: "",
+  password: "",
+  role: "",
+  phone:"",
+};
 
 export default function SignUp() {
-  const initialState = {
-    name: "",
-    email: "",
-    hash_password: "",
-    role: "",
-    phone:"",
-  };
+ 
 
   const [formstate, setFormstate] = useState(initialState);
+     const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const toast = useToast();
   const router = useRouter();
@@ -48,22 +52,22 @@ export default function SignUp() {
 
   function postData() {
     console.log(formstate);
-
-    // if (
-    //   formstate.email == "" ||
-    //   formstate.hash_password == "" ||
-    //   formstate.role == "" ||
-    //   formstate.name == "" ||
-    //   formstate.phone == ""
-    // ) {
-    //   toast({
-    //     title: `Enter all details`,
-    //     position: "top",
-    //     isClosable: true,
-    //     status: "warning",
-    //     duration: 1000,
-    //   });
-    // } else {
+    dispatch(signup(formstate));
+    if (
+      formstate.email == "" ||
+      formstate.password == "" ||
+      formstate.role == "" ||
+      formstate.name == "" ||
+      formstate.phone == ""
+    ) {
+      toast({
+        title: `Enter all details`,
+        position: "top",
+        isClosable: true,
+        status: "warning",
+        duration: 1000,
+      });
+    } else {
       axios({
         method: "POST",
         url: `http://localhost:3000/api/users/signup`,
@@ -79,7 +83,7 @@ export default function SignUp() {
       router.push("/login");
     }
    
-//   }
+   }
 
   return (
     <>
@@ -135,9 +139,9 @@ export default function SignUp() {
               <InputGroup size="md">
                 <Input
                   borderBottom="2px solid orange"
-                  value={formstate.hash_password}
+                  value={formstate.password}
                   onChange={handleChange}
-                  name="hash_password"
+                  name="password"
                   pr="4.5rem"
                   type={show ? "text" : "password"}
                   placeholder="Enter password"

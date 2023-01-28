@@ -89,9 +89,7 @@ const Navbar = () => {
                 <Link href="/pricing">
                   <Button variant="ghost">Pricing</Button>
                 </Link>
-                <Link href="/notes">
-                  <Button variant="ghost">Notes</Button>
-                </Link>
+              
                 <Link href="/about">
                   <Button variant="ghost">About</Button>
                 </Link>

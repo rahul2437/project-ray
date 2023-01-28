@@ -18,15 +18,21 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import { useDispatch } from "react-redux";
+import { signin } from "../Redux/authReducer/action";
+
+const initialState = {
+  email: "",
+  password: "",
+};
 
 export default function SignIn() {
-  const initialState = {
-    email: "",
-    hash_password: "",
-  };
+ 
+  
 
   const [formstate, setFormstate] = useState(initialState);
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
   const router = useRouter();
   const toast = useToast();
 
@@ -42,8 +48,9 @@ export default function SignIn() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    dispatch(signin(formstate));
 
-    if (formstate.email == "" || formstate.hash_password == "") {
+    if (formstate.email == "" || formstate.password == "") {
       toast({
         title: `Enter all details`,
         position: "top",
@@ -61,7 +68,8 @@ export default function SignIn() {
         },
       });
       let data = await result.json();
-      console.log(data);
+      console.log(data)
+  
       if (data.message == "User not found") {
         toast({
           title: "Wrong password",
@@ -72,6 +80,7 @@ export default function SignIn() {
         });
       } else {
         localStorage.setItem("token", data.token);
+       
         toast({
           title: "Login Successfully",
           status: "success",
@@ -130,10 +139,10 @@ export default function SignIn() {
                     w={["100%", "90%", "80%", "60%"]}
                     placeholder="Password"
                     borderBottom="2px solid orange"
-                    value={formstate.hash_password}
+                    value={formstate.password}
                     onChange={handleChange}
                     type="password"
-                    name="hash_password"
+                    name="password"
                   />
 
                   <Input
@@ -164,3 +173,8 @@ export default function SignIn() {
     </>
   );
 }
+
+
+
+
+

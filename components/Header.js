@@ -162,7 +162,7 @@ const header = () => {
                     fontSize="md"
                     
                   >
-                    Get started
+                  Start Learning
                   </Button>
                   </Link>
                 </Box>

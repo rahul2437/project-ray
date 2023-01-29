@@ -7,7 +7,10 @@ const getCourse = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await connectDB();
     const { id } = req.query;
-    const course = await Course.findOne({ _id: id }).populate("createdBy");
+    const course = await Course.findOne({ _id: id }).populate([
+      { path: "createdBy" },
+      { path: "videos.videoID" },
+    ]);
     if (course) {
       return res.send({ message: `Course Found`, course });
     }

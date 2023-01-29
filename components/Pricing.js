@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 
 import { IoCheckmark } from "react-icons/io5";
-import PaymentCard from "./PaymentCard"
+import PaymentCard from "./PaymentCard";
 
 const Price = () => {
   const topBg = useColorModeValue("red.100", "gray.700");
@@ -49,9 +49,9 @@ const Price = () => {
   return (
     <Box bg="#edf3f8">
       <Box
-       _dark={{
-        bg: "gray.200",
-      }}
+        _dark={{
+          bg: "gray.200",
+        }}
         p={10}
         py="24"
         mx={{ base: "4", md: "10", lg: "20", xl: "32" }}
@@ -67,7 +67,7 @@ const Price = () => {
           bgClip="text"
           textAlign="center"
         >
-           Pricing Base on Duration.
+          Pricing Base on Duration.
         </Text>
         <chakra.p
           mb={6}
@@ -78,7 +78,8 @@ const Price = () => {
           }}
           textAlign="center"
         >
-          If you're not satisfied, contact us and we will refund your money in 7 working Day. Till First month of starting you account.
+          If youre not satisfied, contact us and we will refund your money in 7
+          working Day. Till First month of starting you account.
         </chakra.p>
         <Box w="full" pt={8}>
           <Flex
@@ -139,7 +140,7 @@ const Price = () => {
                     /1 Year
                   </chakra.span>
                 </HStack>
-                  {/* <Text fontSize="sm" color="red.500" _dark={{ color: "red.400" }} fontWeight='600'>*Or refer 3 friends</Text> */}
+                {/* <Text fontSize="sm" color="red.500" _dark={{ color: "red.400" }} fontWeight='600'>*Or refer 3 friends</Text> */}
               </VStack>
               <VStack
                 fontSize="sm"
@@ -169,8 +170,7 @@ const Price = () => {
                   rounded="md"
                   shadow="md"
                 >
-                 
-                  <PaymentCard month='3' />
+                  <PaymentCard month="3" />
                   {/* </Button> */}
                 </Box>
               </VStack>
@@ -252,8 +252,7 @@ const Price = () => {
                   <Feature>Limited 24/7 Ticket Support</Feature>
                 </VStack>
                 <Box display="inline-flex" rounded="md" shadow="md" w="full">
-              
-                  <PaymentCard month='12' />
+                  <PaymentCard month="12" />
                 </Box>
               </VStack>
             </Flex>
@@ -335,7 +334,7 @@ const Price = () => {
                   rounded="md"
                   shadow="md"
                 >
-                  <PaymentCard month='6' />
+                  <PaymentCard month="6" />
                 </Box>
               </VStack>
             </Flex>
@@ -347,5 +346,3 @@ const Price = () => {
 };
 
 export default Price;
-
-

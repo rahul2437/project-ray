@@ -36,6 +36,7 @@ const about = () => {
             borderBottomLeftRadius="50"
             borderTopLeftRadius={2}
             src="https://cdn.dribbble.com/users/1482796/screenshots/11163610/media/24482d28954cf2cad158512c7c62d51f.gif"
+            alt="Typing"
           />
         </Box>
         <Box mt="160px">

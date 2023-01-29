@@ -62,6 +62,9 @@ For Web RTC Connection **Credits to SignalWire** and Piyush Garg Youtube Chenal
 ## Admin Dashboard
 ![image](https://user-images.githubusercontent.com/48915605/215340394-29b4964c-9e4a-4bd2-8793-d5ba49498f8c.png)
 ![image](https://user-images.githubusercontent.com/48915605/215340383-e3f4cc43-bb70-46d6-8a03-4471d4a695b7.png)
+# Add Video/Course
+![image](https://user-images.githubusercontent.com/48915605/215340488-fb1bec7e-52e3-42b3-800b-9f52afdf5268.png)
+![image](https://user-images.githubusercontent.com/48915605/215340493-05bb9ccb-e199-410d-ace9-6a6a2453cc9a.png)
 
  
 ## DARK MODE

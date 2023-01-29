@@ -44,7 +44,7 @@ export default function AddForm() {
     e.preventDefault();
     form.createdBy = user._id;
     console.log(form);
-    axios.post("http://localhost:3000/api/courses/", form).then((res) => {
+    axios.post("/api/courses/", form).then((res) => {
       if (res.data.message == "Course Created") {
         return toast({
           title: res.data.message,

@@ -7,10 +7,7 @@ const getVideo = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await connectDB();
     const { id } = req.query;
-    const video = await Video.findOne({ _id: id }).populate([
-      { path: "teacher" },
-      { path: "course" },
-    ]);
+    const video = await Video.findOne({ _id: id });
     if (video) {
       return res.send({ message: `Video Found`, video });
     }

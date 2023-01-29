@@ -59,7 +59,7 @@ const Course = () => {
         setLoading(false);
       }
     });
-  });
+  }, []);
   if (loading) {
     return ".....LOADING PAGE";
   }

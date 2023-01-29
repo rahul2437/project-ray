@@ -22,10 +22,7 @@ const addVideo = async (req: NextApiRequest, res: NextApiResponse) => {
 const getAllVideos = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await connectDB();
-    const videos = await Course.find({}).populate({
-      path: "createdBy",
-      select: "name",
-    });
+    const videos = await Course.find({});
     if (videos) {
       return res.send({
         message: `Videos Found`,

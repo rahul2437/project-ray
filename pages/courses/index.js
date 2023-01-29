@@ -58,16 +58,18 @@ const CoursesGrid = () => {
         padding: "2em",
       }}
     >
-      {courses.map((course) => (
-        <CourseCard
-          key={course._id}
-          slug={course.slug}
-          id={course._id}
-          title={course.title}
-          desc={course.description}
-          img={course.thumbnail}
-        />
-      ))}
+      {courses
+        ? courses.map((course) => (
+            <CourseCard
+              key={course._id}
+              slug={course.slug}
+              id={course._id}
+              title={course.title}
+              desc={course.description}
+              img={course.thumbnail}
+            />
+          ))
+        : "No courses yet"}
     </div>
   );
 };

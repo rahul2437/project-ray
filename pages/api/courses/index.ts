@@ -17,7 +17,7 @@ const addCourse = async (req: NextApiRequest, res: NextApiResponse) => {
 const getAllCourses = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await connectDB();
-    const courses = await Course.find({}).populate("createdBy");
+    const courses = await Course.find({});
     if (courses) {
       return res.send({
         message: `Courses Found`,

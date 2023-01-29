@@ -13,6 +13,7 @@ import {
   useColorMode,
   Image,
   Text,
+ 
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Link from "next/link";
@@ -68,6 +69,9 @@ const Navbar = () => {
               lg: "inline-flex",
             }}
           >
+            <a href="https://csb-zdeqxh.netlify.app/" target={"_blank"}>
+            <Image src="https://tse3.mm.bing.net/th?id=OIP.g6maQkAQ4ODJ7bFSGJC_nAHaHa&pid=Api&P=0" height={12} marginRight={5} alt="" />
+            </a>
             <Button
               onClick={toggleColorMode}
               rounded={"full"}
@@ -164,6 +168,10 @@ const Navbar = () => {
                 aria-label="Close menu"
                 onClick={mobileNav.onClose}
               />
+
+<a href="https://csb-zdeqxh.netlify.app/" target={"_blank"}>
+            <Image src="https://tse3.mm.bing.net/th?id=OIP.g6maQkAQ4ODJ7bFSGJC_nAHaHa&pid=Api&P=0" height={12} marginRight={5} alt="" />
+            </a>
               <Button
                 onClick={toggleColorMode}
                 rounded={"full"}

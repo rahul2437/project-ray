@@ -19,7 +19,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useDispatch } from "react-redux";
-import { signin } from "../Redux/authReducer/action";
+import { signin } from "../Redux/AuthReducer/action";
 
 const initialState = {
   email: "",

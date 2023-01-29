@@ -3,8 +3,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Provider } from "react-redux";
 import store, { persistor } from "@/Redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Chat from "../components/chat"
 export default function App({ Component, pageProps }) {
   return (
+    <>
+    <Chat />
     <ChakraProvider>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
@@ -12,5 +15,6 @@ export default function App({ Component, pageProps }) {
         </PersistGate>
       </Provider>
     </ChakraProvider>
+    </>
   );
 }

@@ -15,8 +15,6 @@ pnpm dev
 
 This is our Hackathon project . This is a collaborative project of team of 3 members and a duration of 48 to 50 Hours.We have named the website as "TECH WALA"
 
-## About Website
-
 
 ## Tech Stacks
 
@@ -38,6 +36,34 @@ This is our Hackathon project . This is a collaborative project of team of 3 mem
 - CRUD functionalitites for Admin Side
 
 For Web RTC Connection **Credits to SignalWire** and Piyush Garg Youtube Chenal
+
+## Landing Page 
+
+![Landing Image 1](https://github.com/rahul2437/project-ray/blob/71c4631ef5007bd64444d8142dc42d45fc30efcc/Images/Screenshot_20230129_213706.png)
+![Landing Image 2](https://github.com/rahul2437/project-ray/blob/71c4631ef5007bd64444d8142dc42d45fc30efcc/Images/Screenshot_20230129_213731.png)
+
+## Signup
+
+![Signup Page](https://github.com/rahul2437/project-ray/blob/71c4631ef5007bd64444d8142dc42d45fc30efcc/Images/Screenshot_20230129_213821.png)
+
+## Login Page
+![Login Page](https://github.com/rahul2437/project-ray/blob/71c4631ef5007bd64444d8142dc42d45fc30efcc/Images/Screenshot_20230129_213801.png)
+
+## ABOUT US
+
+![ABOUT PAGE 1](https://github.com/rahul2437/project-ray/blob/71c4631ef5007bd64444d8142dc42d45fc30efcc/Images/Screenshot_20230129_213849.png)
+
+![ABOUT PAGE 2](https://github.com/rahul2437/project-ray/blob/71c4631ef5007bd64444d8142dc42d45fc30efcc/Images/Screenshot_20230129_213908.png) 
+
+
+## Course Section
+![COURSE PAGE]()
+ 
+## DARK MODE
+![DARK MODE HOME PAGE](https://github.com/rahul2437/project-ray/blob/71c4631ef5007bd64444d8142dc42d45fc30efcc/Images/Screenshot_20230129_213950.png)
+
+
+
 
 
 

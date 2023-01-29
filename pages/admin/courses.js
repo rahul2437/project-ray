@@ -80,10 +80,14 @@ const CoursesTable = () => {
         <Tbody>
           {courses
             ? courses.map((course) => (
-                <Tr>
+                <Tr key={course._id}>
                   <Td>{course.title}</Td>
                   <Td>
-                    <Image width={100} src={course.thumbnail} />
+                    <Image
+                      width={100}
+                      src={course.thumbnail}
+                      alt="ImageThumb"
+                    />
                   </Td>
                   <Td>
                     {course.createdBy ? course.createdBy.name : "User Deleted"}

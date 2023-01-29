@@ -78,11 +78,8 @@ const VideosTable = () => {
         <Tbody>
           {videos
             ? videos.map((course) => (
-                <Tr>
+                <Tr key={course._id}>
                   <Td>{course.title}</Td>
-                  <Td>
-                    <Image width={100} src={course.thumbnail} />
-                  </Td>
                   <Td>
                     {course.createdBy ? course.createdBy.name : "User Deleted"}
                   </Td>

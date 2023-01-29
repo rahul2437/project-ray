@@ -48,7 +48,7 @@ const UserTable = () => {
         <Tbody>
           {users
             ? users.map((user) => (
-                <Tr>
+                <Tr key={user._id}>
                   <Td>{user.name}</Td>
                   <Td>{user.email}</Td>
                   <Td>{user.phone}</Td>

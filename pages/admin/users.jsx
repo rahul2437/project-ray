@@ -8,7 +8,8 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Sidebar from "./index";
 const Users = () => {
   return (
@@ -21,6 +22,19 @@ const Users = () => {
 };
 
 const UserTable = () => {
+  const [users, setUsers] = useState([]);
+  console.log(users);
+  const getAllUsers = () => {
+    return axios
+      .get("http://localhost:3000/api/users")
+      .then((res) => res.data.users);
+  };
+  useEffect(() => {
+    getAllUsers().then((data) => {
+      setUsers(data);
+    });
+  }, []);
+
   return (
     <TableContainer>
       <Table variant="striped" colorScheme="teal">
@@ -32,11 +46,15 @@ const UserTable = () => {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr>
-            <Td>inches</Td>
-            <Td>millimetres (mm)</Td>
-            <Td isNumeric>25.4</Td>
-          </Tr>
+          {users
+            ? users.map((user) => (
+                <Tr>
+                  <Td>{user.name}</Td>
+                  <Td>{user.email}</Td>
+                  <Td>{user.phone}</Td>
+                </Tr>
+              ))
+            : "No users found"}
         </Tbody>
       </Table>
     </TableContainer>

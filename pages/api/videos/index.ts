@@ -1,4 +1,5 @@
 import connectDB from "@/middleware/db";
+import Course from "@/models/Courses";
 import Video from "@/models/Videos";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -17,7 +18,10 @@ const addVideo = async (req: NextApiRequest, res: NextApiResponse) => {
 const getAllVideos = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await connectDB();
-    const videos = await Video.find();
+    const videos = await Course.find({}).populate({
+      path: "createdBy",
+      select: "name",
+    });
     if (videos) {
       return res.send({
         message: `Videos Found`,

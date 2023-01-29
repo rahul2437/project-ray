@@ -45,6 +45,7 @@ const LinkItems = [
   { name: "Users", link: "/admin/users" },
   { name: "Courses", link: "/admin/courses" },
   { name: "Videos", link: "/admin/videos" },
+  { name: "Add Course", link: "/admin/addCourse" },
 ];
 
 export default function SidebarWithHeader({ children }) {

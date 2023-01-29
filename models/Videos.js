@@ -8,6 +8,7 @@ const VideoSchema = mongoose.Schema(
     source: {
       type: String,
       required: true,
+      unique: true,
     },
     teacher: {
       type: mongoose.Schema.Types.ObjectId,
@@ -34,4 +35,4 @@ const VideoSchema = mongoose.Schema(
   }
 );
 
-export default mongoose.models.Video || mongoose.model("Video", VideoSchema);
+export default mongoose.model("Video", VideoSchema) || mongoose.models.Video;

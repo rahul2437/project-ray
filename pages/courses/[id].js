@@ -61,7 +61,7 @@ const Course = () => {
         setLoading(false);
       }
     });
-  }, [course]);
+  });
   if (loading) {
     return ".....LOADING PAGE";
   }

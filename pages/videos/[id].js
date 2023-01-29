@@ -30,9 +30,7 @@ const VideoPlayer = () => {
   const { id } = router.query;
   console.log(id);
   const getCourse = () => {
-    return axios
-      .get(`http://localhost:3000/api/videos/${id}`)
-      .then((res) => res.data);
+    return axios.get(`/api/videos/${id}`).then((res) => res.data);
   };
 
   useEffect(() => {

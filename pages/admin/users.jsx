@@ -25,9 +25,7 @@ const UserTable = () => {
   const [users, setUsers] = useState([]);
   console.log(users);
   const getAllUsers = () => {
-    return axios
-      .get("http://localhost:3000/api/users")
-      .then((res) => res.data.users);
+    return axios.get("/api/users").then((res) => res.data.users);
   };
   useEffect(() => {
     getAllUsers().then((data) => {

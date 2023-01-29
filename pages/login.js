@@ -56,7 +56,7 @@ export default function SignIn() {
         duration: 1000,
       });
     } else {
-      let result = await fetch("http://localhost:3000/api/users/login", {
+      let result = await fetch("/api/users/login", {
         method: "POST",
         body: JSON.stringify(formstate),
         headers: {

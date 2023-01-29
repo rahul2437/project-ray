@@ -2,7 +2,7 @@ import axios from "axios";
 import * as types from "./actionTypes";
 
 const signup = (payload) => (dispatch) => {
-  const signupURL = `http://localhost:3000/api/users/signup`;
+  const signupURL = `/api/users/signup`;
   dispatch({ type: types.SIGNUP_REQUEST });
   try {
     axios
@@ -22,7 +22,7 @@ const signup = (payload) => (dispatch) => {
 };
 
 const signin = (payload) => (dispatch) => {
-  const signinURL = `http://localhost:3000/api/users/login`;
+  const signinURL = `/api/users/login`;
   dispatch({ type: types.LOGIN_REQUEST });
   try {
     axios

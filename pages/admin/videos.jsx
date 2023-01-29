@@ -54,9 +54,7 @@ const VideosTable = () => {
   const [videos, setVideos] = useState([]);
   console.log(videos);
   const getAllUsers = () => {
-    return axios
-      .get("http://localhost:3000/api/videos")
-      .then((res) => res.data.videos);
+    return axios.get("/api/videos").then((res) => res.data.videos);
   };
   useEffect(() => {
     getAllUsers().then((data) => {

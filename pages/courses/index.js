@@ -29,9 +29,7 @@ const CoursesGrid = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const getCourses = () => {
-    return axios
-      .get("http://localhost:3000/api/courses")
-      .then((res) => res.data.courses);
+    return axios.get("/api/courses").then((res) => res.data.courses);
   };
 
   useEffect(() => {

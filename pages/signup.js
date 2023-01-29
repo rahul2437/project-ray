@@ -67,7 +67,7 @@ export default function SignUp() {
     } else {
       axios({
         method: "POST",
-        url: `http://localhost:3000/api/users/signup`,
+        url: `/api/users/signup`,
         data: formstate,
       });
       toast({

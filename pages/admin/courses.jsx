@@ -55,9 +55,7 @@ const CoursesTable = () => {
   const [courses, setCourses] = useState([]);
   console.log(courses);
   const getAllUsers = () => {
-    return axios
-      .get("http://localhost:3000/api/courses")
-      .then((res) => res.data.courses);
+    return axios.get("/api/courses").then((res) => res.data.courses);
   };
   useEffect(() => {
     getAllUsers().then((data) => {
@@ -138,7 +136,7 @@ function AddVideoModal({ cid }) {
     form.teacher = user._id;
     form.course = cid;
     axios
-      .post("http://localhost:3000/api/videos", form)
+      .post("/api/videos", form)
       .then((res) => {
         if (res.data.message == "Video created") {
           return toast({

@@ -45,9 +45,7 @@ const Course = () => {
   const router = useRouter();
   const { id } = router.query;
   const getCourse = () => {
-    return axios
-      .get(`http://localhost:3000/api/courses/${id}`)
-      .then((res) => res.data);
+    return axios.get(`/api/courses/${id}`).then((res) => res.data);
   };
 
   useEffect(() => {

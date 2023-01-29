@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { signout } from "../../Redux/authReducer/action";
 import styles from "./AddCourse.module.css";
 const initFormState = {
   title: "",

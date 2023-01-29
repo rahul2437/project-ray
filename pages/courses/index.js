@@ -26,6 +26,8 @@ const courses = () => {
 const CoursesGrid = () => {
   const [courses, setCourse] = useState([]);
   console.log(courses);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const getCourses = () => {
     return axios
       .get("http://localhost:3000/api/courses")
@@ -33,11 +35,23 @@ const CoursesGrid = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     getCourses().then((data) => {
-      setCourse(data);
+      if (!data) {
+        setError(true);
+        setLoading(false);
+      } else {
+        setCourse(data);
+        setLoading(false);
+      }
     });
   }, []);
-
+  if (loading) {
+    return ".....LOADING PAGE";
+  }
+  if (error) {
+    return "Server ERROR LOADING PAGE";
+  }
   return (
     <div
       style={{

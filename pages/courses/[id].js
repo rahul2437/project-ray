@@ -40,6 +40,7 @@ const Singlepage = () => {
 const Course = () => {
   const [course, setCourse] = useState({});
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   console.log(course);
   const router = useRouter();
   const { id } = router.query;
@@ -52,14 +53,19 @@ const Course = () => {
   useEffect(() => {
     setLoading(true);
     getCourse().then((data) => {
-      setCourse(data.course);
-      setLoading(false);
+      if (!data) {
+        setError(true);
+        setLoading(false);
+      } else {
+        setCourse(data.course);
+        setLoading(false);
+      }
     });
   }, []);
   if (loading) {
     return ".....LOADING PAGE";
   }
-  if (!course) {
+  if (error) {
     return "ERROR LOADING PAGE";
   }
   return (

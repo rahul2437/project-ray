@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { signin } from "../../Redux/authReducer/action";
+import { signin } from "../../Redux/AuthReducer/action.js";
 import styles from "./AdminLogin.module.css";
 const initFormState = {
   email: "",

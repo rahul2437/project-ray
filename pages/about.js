@@ -4,13 +4,13 @@ import {
   Grid,
   chakra,
   Divider,
-Image,
+  Image,
   Heading,
   Text,
 } from "@chakra-ui/react";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import Team from "../components/Team";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Team from "../components/team";
 
 const about = () => {
   return (
@@ -27,13 +27,18 @@ const about = () => {
         // m="auto"
         mb="80px"
         gap={16}
-
       >
         {" "}
         <Box m="auto">
-          <Image borderTopRightRadius={50} borderBottomRightRadius={2} borderBottomLeftRadius='50'  borderTopLeftRadius={2} src="https://cdn.dribbble.com/users/1482796/screenshots/11163610/media/24482d28954cf2cad158512c7c62d51f.gif" />
+          <Image
+            borderTopRightRadius={50}
+            borderBottomRightRadius={2}
+            borderBottomLeftRadius="50"
+            borderTopLeftRadius={2}
+            src="https://cdn.dribbble.com/users/1482796/screenshots/11163610/media/24482d28954cf2cad158512c7c62d51f.gif"
+          />
         </Box>
-        <Box mt="160px" >
+        <Box mt="160px">
           <Heading mb="30px">About us</Heading>
           <Text lineHeight={7} letterSpacing={1}>
             Tech education refers to the study and application of various
@@ -50,7 +55,13 @@ const about = () => {
         </Box>
       </Grid>
 
-      <Heading as={'h1'} w="100%" fontSize="3xl" textAlign="center" fontWeight="700">
+      <Heading
+        as={"h1"}
+        w="100%"
+        fontSize="3xl"
+        textAlign="center"
+        fontWeight="700"
+      >
         OUR TEAM
       </Heading>
       <Divider />
@@ -59,14 +70,11 @@ const about = () => {
           sm: "repeat(1, 1fr)",
           md: "repeat(2, 1fr)",
           lg: "repeat(3, 1fr)",
-        
         }}
-        
         w="100%"
-        
         mb="10px"
-        justifyContent='center'
-        >
+        justifyContent="center"
+      >
         <Team
           image="https://avatars.githubusercontent.com/u/99896766?v=4"
           name="Ayush Chandra"
@@ -91,7 +99,7 @@ const about = () => {
           email="yy072156@gmail.com"
           linkedIn="https://www.linkedin.com/in/yadav-yogesh-583471233/"
         />
-  </Grid>
+      </Grid>
       <Footer />
     </Box>
   );

@@ -6,6 +6,7 @@ import Features from "../components/Home/Features";
 import Navbar from "../components/Navbar";
 import Price from "../components/Pricing";
 
+import Chat from "../components/chat"
 import Footer from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,6 +23,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Chat/>
       <Box>
         <Navbar />
         <Header />

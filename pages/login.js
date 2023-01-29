@@ -16,8 +16,8 @@ import {
 import { isExpired, decodeToken } from "react-jwt";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { useDispatch } from "react-redux";
 import { signin } from "../Redux/authReducer/action";
 
@@ -27,9 +27,6 @@ const initialState = {
 };
 
 export default function SignIn() {
- 
-  
-
   const [formstate, setFormstate] = useState(initialState);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
@@ -68,8 +65,8 @@ export default function SignIn() {
         },
       });
       let data = await result.json();
-      console.log(data)
-  
+      console.log(data);
+
       if (data.message == "User not found") {
         toast({
           title: "Wrong password",
@@ -80,7 +77,7 @@ export default function SignIn() {
         });
       } else {
         localStorage.setItem("token", data.token);
-       
+
         toast({
           title: "Login Successfully",
           status: "success",
@@ -91,9 +88,8 @@ export default function SignIn() {
         setTimeout(() => {
           let token = localStorage.getItem("token");
           const myDecodedToken = decodeToken(token);
-         
-            router.push("/#");
-          
+
+          router.push("/#");
         }, 1000);
       }
       setFormstate(initialState);
@@ -110,71 +106,73 @@ export default function SignIn() {
 
   return (
     <>
-    <Navbar />
-    <Box pb="30px"    >
-    
-      {!loading && (
-        <Box w="50%" m="auto"  boxShadow='lg' p='6' rounded='md' bg='white' mt="30px" >
-          <VStack spacing={10} align="stretch">
-            <Heading textAlign="center" color="red">
-              Sign In
-            </Heading>
-            <hr />
+      <Navbar />
+      <Box pb="30px">
+        {!loading && (
+          <Box
+            w="50%"
+            m="auto"
+            boxShadow="lg"
+            p="6"
+            rounded="md"
+            bg="white"
+            mt="30px"
+          >
+            <VStack spacing={10} align="stretch">
+              <Heading textAlign="center" color="red">
+                Sign In
+              </Heading>
+              <hr />
 
-            <Box textAlign="center">
-              <form onSubmit={(e) => handleSubmit(e)}>
-                <FormControl>
-                  <Input
-                    w={["100%", "90%", "80%", "60%"]}
-                    type="text"
-                    placeholder="Email"
-                    borderBottom="2px solid orange"
-                    value={formstate.email}
-                    onChange={handleChange}
-                    name="email"
-                  />
+              <Box textAlign="center">
+                <form onSubmit={(e) => handleSubmit(e)}>
+                  <FormControl>
+                    <Input
+                      w={["100%", "90%", "80%", "60%"]}
+                      type="text"
+                      placeholder="Email"
+                      borderBottom="2px solid orange"
+                      value={formstate.email}
+                      onChange={handleChange}
+                      name="email"
+                    />
 
-                  <Input
-                    mt="5"
-                    w={["100%", "90%", "80%", "60%"]}
-                    placeholder="Password"
-                    borderBottom="2px solid orange"
-                    value={formstate.password}
-                    onChange={handleChange}
-                    type="password"
-                    name="password"
-                  />
+                    <Input
+                      mt="5"
+                      w={["100%", "90%", "80%", "60%"]}
+                      placeholder="Password"
+                      borderBottom="2px solid orange"
+                      value={formstate.password}
+                      onChange={handleChange}
+                      type="password"
+                      name="password"
+                    />
 
-                  <Input
-                    type="submit"
-                  
-                    _hover={{
-                      bg: "green",
-                      cursor: "pointer" 
-                    }}
-                    bg="red.600"
-                    mt="10"
-                    w="70%"
-                    color="white"
-                    placeholder="Submit form"
-                  />
-                </FormControl>
-              </form>
-            </Box>
-          </VStack>
-             <br /> 
-            
-           <Text textAlign="center">Click Here To Create Account -- <Link href="signup">Signup</Link></Text>
-        </Box>
-        
-      )}
-    </Box>
-    {/* <Footer /> */}
+                    <Input
+                      type="submit"
+                      _hover={{
+                        bg: "green",
+                        cursor: "pointer",
+                      }}
+                      bg="red.600"
+                      mt="10"
+                      w="70%"
+                      color="white"
+                      placeholder="Submit form"
+                    />
+                  </FormControl>
+                </form>
+              </Box>
+            </VStack>
+            <br />
+
+            <Text textAlign="center">
+              Click Here To Create Account -- <Link href="signup">Signup</Link>
+            </Text>
+          </Box>
+        )}
+      </Box>
+      {/* <Footer /> */}
     </>
   );
 }
-
-
-
-
-

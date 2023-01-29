@@ -23,10 +23,10 @@ const appReducer = combineReducers({
 });
 
 const rootReducer = (state, action) => {
-  if (action.type === "LOGOUT_REQUEST") {
-    storage.removeItem("persist:root");
-    return appReducer(undefined, action);
-  }
+  // if (action.type === "LOGOUT_REQUEST") {
+  //   storage.removeItem("persist:root");
+  //   return appReducer(undefined, action);
+  // }
   return appReducer(state, action);
 };
 
@@ -36,7 +36,8 @@ const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;
 const store = legacy_createStore(
-  persistedReducer,
+  // persistedReducer,
+  appReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
 const persistor = persistStore(store);

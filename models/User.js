@@ -35,7 +35,7 @@ const UserSchema = mongoose.Schema(
         {
           courseId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Course",
+            ref: "course",
           },
         },
       ],
@@ -45,7 +45,7 @@ const UserSchema = mongoose.Schema(
         {
           courseId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Course",
+            ref: "course",
           },
         },
       ],
@@ -67,4 +67,4 @@ UserSchema.methods = {
   },
 };
 
-export default mongoose.model("User", UserSchema) || mongoose.models.User;
+export default mongoose.models.user || mongoose.model("user", UserSchema);

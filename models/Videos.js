@@ -12,12 +12,12 @@ const VideoSchema = mongoose.Schema(
     },
     teacher: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "user",
       required: true,
     },
     course: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Course",
+      ref: "course",
       required: true,
     },
     description: {
@@ -35,4 +35,4 @@ const VideoSchema = mongoose.Schema(
   }
 );
 
-export default mongoose.model("Video", VideoSchema) || mongoose.models.Video;
+export default mongoose.models.video || mongoose.model("video", VideoSchema);

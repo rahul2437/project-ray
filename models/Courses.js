@@ -32,7 +32,7 @@ const CourseSchema = mongoose.Schema(
       {
         videoID: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Video",
+          ref: "video",
         },
       },
     ],
@@ -43,4 +43,4 @@ const CourseSchema = mongoose.Schema(
   }
 );
 
-export default mongoose.model("Course", CourseSchema) || mongoose.models.Course;
+export default mongoose.models.course || mongoose.model("course", CourseSchema);

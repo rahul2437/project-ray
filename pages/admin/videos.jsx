@@ -1,7 +1,54 @@
-import React from "react";
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Image,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr,
+  useDisclosure,
+  useToast,
+  VStack,
+} from "@chakra-ui/react";
+import axios from "axios";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Sidebar from "./index";
 const videos = () => {
-  return <Sidebar></Sidebar>;
+  const { isAuth, user } = useSelector((store) => store.AuthReducer);
+
+  return (
+    <Sidebar>
+      {isAuth && user?.role !== "student" ? (
+        <VideosTable />
+      ) : (
+        <VStack bg={"#efefef"} p={"1rem"} boxShadow={"2xl"} align={"center"}>
+          <Text fontSize={"3xl"} bg={"#efefef"} p={"1rem"} align={"center"}>
+            Please Login
+          </Text>
+          <Link href={"/login"}>
+            <Text color={"blue.300"}>Login</Text>
+          </Link>
+        </VStack>
+      )}
+    </Sidebar>
+  );
 };
 const VideosTable = () => {
   const [videos, setVideos] = useState([]);

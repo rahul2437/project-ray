@@ -9,6 +9,10 @@ const addVideo = async (req: NextApiRequest, res: NextApiResponse) => {
     let { body } = req;
     let video = new Video(body);
     await video.save();
+    await Course.findByIdAndUpdate(
+      { _id: body.course },
+      { $push: { videos: { videoID: video._id } } }
+    );
     res.send({ message: `Video created`, video });
   } catch (error: any) {
     res.send({ message: error.message });
